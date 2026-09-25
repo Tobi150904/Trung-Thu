@@ -4758,10 +4758,10 @@ return orthographicDepthToViewZ(depth,cameraNear,cameraFar);
     vec3 H = normalize(L + V);
     float specular = pow(max(dot(N, H), 0.0), 28.0) * (0.12 + vSpark * 0.25) * wrap;
 
-    vec3 col = vColor * diffuse * back + uRimColor * (rim + specular);
-    float colorPhase = uTime * 0.48 + vPhase * 6.2831;
-    vec3 colorCycle = 0.62 + 0.38 * cos(colorPhase + vec3(0.0, 2.0944, 4.1888));
-    col = mix(col, colorCycle * (diffuse + rim + 0.35), 0.58);
+    float colorPhase = uTime * 0.72 + vPhase * 0.45;
+    vec3 colorCycle = 0.5 + 0.5 * cos(colorPhase + vec3(0.0, 4.1888, 2.0944));
+    colorCycle = pow(colorCycle, vec3(0.72));
+    vec3 col = colorCycle * (0.38 + diffuse * back * 0.52 + rim * 0.28 + specular * 0.18);
     col *= mix(1.0, uInnerDim, vInner);
     float tw = 1.0 + vSpark * (0.35 * sin(uTime * uTwinkleSpeed + vPhase * 6.2831) + 0.2);
     col *= tw;
@@ -4797,6 +4797,7 @@ return orthographicDepthToViewZ(depth,cameraNear,cameraFar);
   }
 `,xW=`
   uniform vec3 uColor;
+  uniform float uTime;
   uniform float uOpacity;
   varying float vFade;
   void main() {
@@ -4804,7 +4805,10 @@ return orthographicDepthToViewZ(depth,cameraNear,cameraFar);
     float d2 = dot(uv, uv);
     if (d2 > 1.0) discard;
     float a = pow(1.0 - sqrt(d2), 2.0) * uOpacity * vFade;
-    gl_FragColor = vec4(uColor, a);
+    float colorPhase = uTime * 0.72;
+    vec3 ringCycle = 0.5 + 0.5 * cos(colorPhase + vec3(0.0, 4.1888, 2.0944));
+    ringCycle = pow(ringCycle, vec3(0.72));
+    gl_FragColor = vec4(ringCycle, a);
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
   }
