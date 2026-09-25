@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "data": {
+    "websiteId": "ba51d6020d8367cc",
+    "enableLetter": true,
+    "enableHeart": true,
+    "flyingTexts": [
+      "trung thu vui vẻ",
+      "iu em nhiều lắm",
+      "cảm ơn em vì tất cả",
+      "iu em",
+      "i love you",
+      "Minh Châu",
+      "chúc em thật nhiều may mắn",
+      "chúc em một đời bình an"
+    ],
+    "flyingImages": [
+      "media/flying-1.webp",
+      "media/flying-2.webp",
+      "media/flying-3.webp",
+      "media/flying-4.webp",
+      "media/flying-5.webp",
+      "media/flying-6.webp"
+    ],
+    "couplePhoto": "media/couple.webp",
+    "letter": {
+      "text": "Trung Thu đến rồi...\n\nAnh chúc em bé của anh có một ngày lễ Trung Thu thật vui vẻ và hạnh phúc. Luôn vui vẻ yêu đời tràn đầy sức sống và chúc cho những điều tôt đẹp sẽ đến với chúng ta...\nMong em vẫn luôn là ánh trắng sáng chiếu soi cuộc sống của anh, cũng mong rằng chúng ta sẽ và luôn cố gắng để những mùa trung thu sau cũng sẽ luôn có nhau..\nCũng thật xin lỗi em nhiều vì Trung Thu này anh không có món quà nào đặc biệt dành cho em cả. Cũng không ở cạnh em đón lễ cùng em được, thiệt thòi cho em rồi..!\nXin lỗi em bé của anh nhiều...\nAnh sẽ sắp sếp để tụi mình có thể sớm gặp nhau hơn...\n\nAnh yêu em bé nhiều lắm... ❤️"
+    },
+    "bgMusic": "media/bg-music.mp3",
+    "palette": "hong",
+    "expiresAt": "2099-12-31T00:00:00.000Z",
+    "productType": "trungthuv2",
+    "createdAt": "2026-09-18T16:08:29.214Z",
+    "showWatermark": false
+  }
+}
