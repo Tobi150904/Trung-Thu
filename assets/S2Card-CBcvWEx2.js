@@ -4759,6 +4759,9 @@ return orthographicDepthToViewZ(depth,cameraNear,cameraFar);
     float specular = pow(max(dot(N, H), 0.0), 28.0) * (0.12 + vSpark * 0.25) * wrap;
 
     vec3 col = vColor * diffuse * back + uRimColor * (rim + specular);
+    float colorPhase = uTime * 0.48 + vPhase * 6.2831;
+    vec3 colorCycle = 0.62 + 0.38 * cos(colorPhase + vec3(0.0, 2.0944, 4.1888));
+    col = mix(col, colorCycle * (diffuse + rim + 0.35), 0.58);
     col *= mix(1.0, uInnerDim, vInner);
     float tw = 1.0 + vSpark * (0.35 * sin(uTime * uTwinkleSpeed + vPhase * 6.2831) + 0.2);
     col *= tw;
